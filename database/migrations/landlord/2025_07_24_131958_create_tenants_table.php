@@ -31,6 +31,8 @@ return new class extends Migration
             $table->string('email')->nullable();
             $table->string('phone')->nullable();
             $table->string('status')->default('active');
+            $table->string('vendor_code')->nullable()->unique()->nullable();
+            $table->string('vendor_code_status')->default('inactive');
             $table->unsignedBigInteger('sms')->default(100);
             $table->boolean('is_deployed')->default(false);
             $table->timestamp('disabled_at')->nullable();

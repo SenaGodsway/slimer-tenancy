@@ -19,6 +19,8 @@ return new class extends Migration
             $table->decimal('price', 10, 2)->default(0);
             $table->string('status')->default('active');
             $table->json('features')->nullable();
+            $table->unsignedInteger('max_accounts')->nullable()->default(null);
+            $table->unsignedInteger('max_branches')->nullable()->default(null);
             $table->softDeletes();
             $table->timestamps();
         });
